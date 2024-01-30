@@ -1,7 +1,7 @@
 FROM node:12.2.0-alpine
-WORKDIR app
+WORKDIR /src/App
 COPY . .
 RUN npm install
 EXPOSE 80
-CMD ["node","app.js"]
+CMD ["node","/src/App.js"]
 
