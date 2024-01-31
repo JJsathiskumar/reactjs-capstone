@@ -1,0 +1,10 @@
+version: '3'  # Specify the version of Docker Compose syntax
+
+services:     # Define the services/containers
+
+  web:        # Service named 'web'
+    image: myreactimg  # Docker image to be used
+    ports:
+      - "80:80"        # Port mapping (host:container)
+
+
