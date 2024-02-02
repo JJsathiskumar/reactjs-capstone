@@ -1,28 +1,21 @@
 #!/bin/bash
 
-# Configuration variables
-SERVER_USERNAME="username"
-SERVER_IP="server_ip"
-IMAGE_NAME="your_image_name"
-IMAGE_TAG="latest"
+# Docker image details
+IMAGE_NAME="dev"
+TAG="latest"
+DOCKER_USERNAME="jjsathiskumar"
+DOCKER_PASSWORD="dckr_pat_NMjI5pS2QAGapFxcgtVq9TZtIoQ"
 
-# SSH into the server
-ssh $SERVER_USERNAME@$SERVER_IP << EOF
+# Build the Docker image
 
-# Pull the latest version of the image from the registry
-docker pull $IMAGE_NAME:$IMAGE_TAG
+# Tag the Docker image with the Docker Hub username and image name
+docker tag $IMAGE_NAME $DOCKER_USERNAME/$IMAGE_NAME:$TAG
 
-# Stop the existing container (if running)
-docker stop $IMAGE_NAME || true
+# Login to Docker Hub
+echo "Logging in to Docker Hub..."
+docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
-# Remove the existing container (if exists)
-docker rm $IMAGE_NAME || true
-
-# Run the new container
-docker run -d --name $IMAGE_NAME -p 8080:80 $IMAGE_NAME:$IMAGE_TAG
-
-# Cleanup unused images (optional)
-# docker image prune -f
-
-EOF
+# Push the Docker image to Docker Hub
+echo "Pushing the Docker image to Docker Hub..."
+docker push $DOCKER_USERNAME/$IMAGE_NAME:$TAG
 
