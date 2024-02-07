@@ -6,7 +6,7 @@ TAG="latest"
 # Build the Docker image
 
 # Tag the Docker image with the Docker Hub username and image name
-docker tag $IMAGE_NAME $DOCKER_USERNAME/$IMAGE_NAME:$TAG
+docker tag myreactimg $DOCKER_USERNAME/$IMAGE_NAME:$TAG
 
 # Login to Docker Hub
 echo "Logging in to Docker Hub..."
