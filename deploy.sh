@@ -1,11 +1,8 @@
 #!/bin/bash
 
 # Docker image details
-IMAGE_NAME="dev"
+IMAGE_NAME="prod"
 TAG="latest"
-DOCKER_USERNAME="jjsathiskumar"
-DOCKER_PASSWORD="dckr_pat_NMjI5pS2QAGapFxcgtVq9TZtIoQ"
-
 # Build the Docker image
 
 # Tag the Docker image with the Docker Hub username and image name
