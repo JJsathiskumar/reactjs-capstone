@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Docker image details
-IMAGE_NAME="prod"
+IMAGE_NAME="dev"
 TAG="latest"
 # Build the Docker image
 
